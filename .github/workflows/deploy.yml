@@ -1,8 +1,8 @@
-name: Deploy Vue Site to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
@@ -23,7 +23,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 关键步骤：构建完成后，在输出目录中生成 .nojekyll 文件
       - name: Add .nojekyll
         run: touch ./dist/.nojekyll
 
